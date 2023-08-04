@@ -1,0 +1,131 @@
+<!-- Name: Meet jani
+     id: c0883915
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration page</title>
+    <link rel="stylesheet" href="../css/rstyle.css" />
+  </head>
+
+  <body>
+    <div>
+      <h1>Welcome to Registration Form</h1>
+      <form action="" class="" id="registrationForm">
+        <div>
+          <label for="firstName">First Name: </label>
+          <!-- Input field for First Name -->
+          <input
+            type="text"
+            placeholder="Enter your first name"
+            id="firstName"
+            required
+          />
+        </div>
+        <div>
+          <label for="lastName">Last Name:</label>
+          <!-- Input field for Last Name -->
+          <input
+            type="text"
+            placeholder="Enter your last name"
+            id="lastName"
+            required
+          />
+        </div>
+        <div>
+          <label for="dob">Date Of Birth: </label>
+          <!-- Input field for Date of Birth -->
+          <input type="date" placeholder="dd/mm/yyyy" id="dob" required />
+        </div>
+        <div>
+          <label>Gender:</label>
+          <!-- Radio buttons for Gender selection -->
+          <input type="radio" id="male" name="gender" value="male" required />
+          <label for="male">Male</label>
+          <input
+            type="radio"
+            id="female"
+            name="gender"
+            value="female"
+            required
+          />
+          <label for="female">Female</label>
+        </div>
+        <div>
+          <label>Password:</label>
+          <!-- Input field for Password -->
+          <input type="password" id="password1" placeholder="password" />
+        </div>
+        <div>
+          <label>Confirm Password :</label>
+          <!-- Input field for Password confirmation -->
+          <input
+            type="password"
+            id="password2"
+            placeholder="confirm password"
+            required
+          />
+        </div>
+        <div>
+          <button type="button" onclick="register()">Register</button>
+          <!-- Register button -->
+        </div>
+      </form>
+      <div id="errorMessages"></div>
+      <!-- Placeholder for displaying error messages -->
+      <script>
+        function register() {
+          var firstName = document.getElementById("firstName").value; // Get the value of the First Name input
+          var lastName = document.getElementById("lastName").value; // Get the value of the Last Name input
+          var dob = document.getElementById("dob").value; // Get the value of the Date of Birth input
+          var gender = document.querySelector('input[name="gender"]:checked'); // Get the selected Gender (male/female)
+          var password1 = document.getElementById("password1").value; // Get the value of the Password input
+          var password2 = document.getElementById("password2").value; // Get the value of the Confirm Password input
+
+          var errorMessages = ""; // Variable to store error messages, initialized as empty string
+
+          if (firstName === "") {
+            alert("please fill in your first name"); // Display an alert if First Name is not filled
+            return;
+          }
+
+          if (lastName === "") {
+            alert("please fill in your last name"); // Display an alert if Last Name is not filled
+            return;
+          }
+
+          if (dob === "") {
+            alert("please fill in your dob"); // Display an alert if Date of Birth is not filled
+            return;
+          }
+
+          if (!gender) {
+            alert("please fill in your gender"); // Display an alert if Gender is not selected
+            return;
+          }
+
+          if (password1 === "") {
+            alert("please fill in your password"); // Display an alert if Password is not filled
+            return;
+          }
+
+          if (password1 !== password2) {
+            alert("your password is not matching"); // Display an alert if Passwords don't match
+            return;
+          }
+
+          document.getElementById("errorMessages").innerHTML = errorMessages; // Update the error messages on the page
+
+          if (errorMessages === "") {
+            // Perform registration logic here (e.g., submit the form to the server)
+            alert("Registration successful!"); // Display an alert for successful registration
+            document.getElementById("registrationForm").reset(); // Reset the form after successful registration
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>

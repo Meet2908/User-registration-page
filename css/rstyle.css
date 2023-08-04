@@ -1,0 +1,43 @@
+/* Apply general styles to body and form */
+/*name : meet jani
+  id : c0883915     */
+
+body {
+  font-family: Arial, sans-serif; /* Set the font family for the whole document */
+  line-height: 1.6; /* Set the line height to 1.6 times the font size */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+form {
+  max-width: 400px; /* Set the maximum width of the form container to 400px */
+  margin: 20px auto; /* Center the form horizontally with a margin of 20px at the top and bottom */
+  padding: 20px; /* Add padding inside the form container */
+  border: 1px solid #ccc; /* Add a 1px solid border with a color of #ccc around the form */
+}
+
+/* Style form elements and labels */
+label {
+  display: block; /* Make the label elements display as blocks to take up full width */
+  margin-bottom: 5px; /* Add a margin of 5px at the bottom of each label */
+}
+
+input[type="text"],
+input[type="date"],
+input[type="password"],
+input[type="radio"] {
+  display: inline-block; /* Make the input elements display as inline-blocks */
+  vertical-align: middle; /* Vertically align the input elements to the middle */
+  margin-right: 5px; /* Add a margin of 5px to the right of each input element */
+}
+
+input[type="radio"] {
+  margin-right: 5px; /* Additional margin of 5px to the right of radio buttons */
+}
+
+/* Style the button */
+button {
+  background-color: #007bff; /* Set the background color of the button */
+  color: #fff; /* Set the text color of the button to white */
+  border: none; /* Remove the button border */
+}
